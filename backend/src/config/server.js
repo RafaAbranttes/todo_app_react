@@ -4,12 +4,13 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const server = express()
 
-// não usa mais
-// server.use(bodyParser.urlencoded({ extended: true}))
-// substituir por 
-server.use(express.urlencoded())
-server.use(express.json())
+
+server.use(bodyParser.urlencoded({ extended: true }))
+server.use(bodyParser.json())
+
 
 server.listen(port, function() {
-    console.log(`BACKEND is runnig on port ${port}.`)
+    console.log(`BACKEND is running on port ${port}.`)
 })
+
+module.exports = server
